@@ -1,4 +1,3 @@
-
 // Copyright (c) FIRST and other WPILib contributors.
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
@@ -7,7 +6,7 @@
 
 #include <frc2/command/CommandScheduler.h>
 
-void Robot::RobotInit() {}
+Robot::Robot() {}
 
 /**
  * This function is called every 20 ms, no matter the mode. Use
@@ -29,6 +28,20 @@ void Robot::RobotPeriodic() {
 void Robot::DisabledInit() {}
 
 void Robot::DisabledPeriodic() {}
+
+/**
+ * This autonomous runs the autonomous command selected by your {@link
+ * RobotContainer} class.
+ */
+void Robot::AutonomousInit() {
+  m_autonomousCommand = m_container.GetAutonomousCommand();
+
+  if (m_autonomousCommand) {
+    m_autonomousCommand->Schedule();
+  }
+}
+
+void Robot::AutonomousPeriodic() {}
 
 void Robot::TeleopInit() {
   // This makes sure that the autonomous stops running when
