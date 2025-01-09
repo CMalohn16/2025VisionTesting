@@ -7,8 +7,8 @@
 #include <frc2/command/CommandPtr.h>
 #include <frc2/command/SubsystemBase.h>
 
-#include "photonlib/PhotonCamera.h"
-#include "photonlib/PhotonUtils.h"
+#include "photon/PhotonCamera.h"
+#include "photon/PhotonUtils.h"
 
 class CameraSubsystem : public frc2::SubsystemBase {
  public:
@@ -31,6 +31,6 @@ class CameraSubsystem : public frc2::SubsystemBase {
   // Components (e.g. motor controllers and sensors) should generally be
   // declared private and exposed only through public methods.
 
-  photonlib::PhotonCamera limelightCamera{"limelight1"};
+  photon::PhotonCamera limelightCamera{"limelight1"};
 
 };

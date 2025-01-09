@@ -9,6 +9,6 @@
   }
 
   bool CameraSubsystem::CheckForTargets() {
-    photonlib::PhotonPipelineResult result = limelightCamera.GetLatestResult();
+    photon::PhotonPipelineResult result = limelightCamera.GetLatestResult();
     return result.HasTargets();
   }
