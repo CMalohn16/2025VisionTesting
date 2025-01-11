@@ -6,20 +6,21 @@
 #include <frc2/command/PrintCommand.h>
 #include <string>
 
-CameraSubsystem::CameraSubsystem() : limelightCamera("limelight1") {
+CameraSubsystem::CameraSubsystem() {
   // Implementation of subsystem constructor goes here.
 }
-
 frc2::CommandPtr CameraSubsystem::GetBestID() {
   return RunOnce([this] { 
     photon::PhotonPipelineResult result = limelightCamera.GetLatestResult();
     if (result.HasTargets()) {
       result.GetBestTarget();
       photon::PhotonTrackedTarget bestTarget = result.GetBestTarget();
-      frc2::PrintCommand(std::to_string(bestTarget.GetFiducialId()));
+      //frc2::PrintCommand(std::to_string(bestTarget.GetFiducialId()));
+      frc::SmartDashboard::PutNumber("AprilTag ID", bestTarget.GetFiducialId());
     } else {
-      frc2::PrintCommand("No Target Found.");
+      //frc2::PrintCommand("No Target Found.");
+      frc::SmartDashboard::PutNumber("AprilTag ID", 100);
     }
   });
-  //return -1;
+  //return -1
 }

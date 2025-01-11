@@ -7,6 +7,8 @@
 #include <frc2/command/CommandPtr.h>
 #include <frc2/command/SubsystemBase.h>
 
+#include <frc/smartdashboard/SmartDashboard.h>
+
 #include "photon/PhotonCamera.h"
 #include "photon/PhotonUtils.h"
 
@@ -23,6 +25,6 @@ class CameraSubsystem : public frc2::SubsystemBase {
   // Components (e.g. motor controllers and sensors) should generally be
   // declared private and exposed only through public methods.
 
-  photon::PhotonCamera limelightCamera;
+  photon::PhotonCamera limelightCamera{"limelight1"};
 
 };
