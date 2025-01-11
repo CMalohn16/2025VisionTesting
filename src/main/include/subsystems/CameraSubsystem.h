@@ -18,19 +18,11 @@ class CameraSubsystem : public frc2::SubsystemBase {
    * Example command factory method.
    */
   frc2::CommandPtr GetBestID();
-
-  /**
-   * An example method querying a boolean state of the subsystem (for example, a
-   * digital sensor).
-   *
-   * @return value of some boolean subsystem state, such as a digital sensor.
-   */
-  bool CheckForTargets();
-
+  
  private:
   // Components (e.g. motor controllers and sensors) should generally be
   // declared private and exposed only through public methods.
 
-  photon::PhotonCamera limelightCamera{"limelight1"};
+  photon::PhotonCamera limelightCamera;
 
 };
