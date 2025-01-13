@@ -9,6 +9,7 @@
 
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <frc/apriltag/AprilTagFieldLayout.h>
+#include <string_view>
 
 #include "photon/PhotonCamera.h"
 #include "photon/PhotonUtils.h"
@@ -23,6 +24,7 @@ class CameraSubsystem : public frc2::SubsystemBase {
   frc2::CommandPtr getBestID();
 
   void getPose();
+  //frc2::CommandPtr alignWithCoralTag();
   void updateResult();
   
  private:

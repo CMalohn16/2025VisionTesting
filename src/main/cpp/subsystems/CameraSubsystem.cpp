@@ -15,7 +15,6 @@ frc2::CommandPtr CameraSubsystem::getBestID() {
   return RunOnce([this] { 
     photon::PhotonPipelineResult result = limelightCamera.GetLatestResult();
     if (result.HasTargets()) {
-      result.GetBestTarget();
       photon::PhotonTrackedTarget bestTarget = result.GetBestTarget();
       //frc2::PrintCommand(std::to_string(bestTarget.GetFiducialId()));
       frc::SmartDashboard::PutNumber("AprilTag ID", bestTarget.GetFiducialId());
@@ -30,6 +29,15 @@ frc2::CommandPtr CameraSubsystem::getBestID() {
 //finds the robot's position on the field using apriltags
 // void CameraSubsystem::getPose() {
 //     photon::
+// }
+
+// frc2::CommandPtr CameraSubsystem::alignWithCoralTag() {
+//   return RunOnce([this] {
+//     photon::PhotonPipelineResult result = limelightCamera.GetLatestResult();
+//     if (result.HasTargets()) {
+//       photon::PhotonTrackedTarget bestTarget = result.GetBestTarget();
+//     }
+//   });
 // }
 
 //updates the result from photonvision limelight
