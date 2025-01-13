@@ -9,7 +9,9 @@
 CameraSubsystem::CameraSubsystem() {
   // Implementation of subsystem constructor goes here.
 }
-frc2::CommandPtr CameraSubsystem::GetBestID() {
+
+//Puts the ID of the best visible target in smart dashboard
+frc2::CommandPtr CameraSubsystem::getBestID() {
   return RunOnce([this] { 
     photon::PhotonPipelineResult result = limelightCamera.GetLatestResult();
     if (result.HasTargets()) {
@@ -23,4 +25,14 @@ frc2::CommandPtr CameraSubsystem::GetBestID() {
     }
   });
   //return -1
+}
+
+//finds the robot's position on the field using apriltags
+// void CameraSubsystem::getPose() {
+//     photon::
+// }
+
+//updates the result from photonvision limelight
+void CameraSubsystem::updateResult() {
+  result = limelightCamera.GetLatestResult();
 }
