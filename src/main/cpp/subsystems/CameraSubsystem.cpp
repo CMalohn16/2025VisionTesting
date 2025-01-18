@@ -3,8 +3,6 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #include <subsystems/CameraSubsystem.h>
-#include <frc2/command/PrintCommand.h>
-#include <string>
 
 CameraSubsystem::CameraSubsystem() {
   // Implementation of subsystem constructor goes here.
@@ -17,10 +15,10 @@ frc2::CommandPtr CameraSubsystem::getBestID() {
     if (result.HasTargets()) {
       photon::PhotonTrackedTarget bestTarget = result.GetBestTarget();
       //frc2::PrintCommand(std::to_string(bestTarget.GetFiducialId()));
-      frc::SmartDashboard::PutNumber("AprilTag ID", bestTarget.GetFiducialId());
+      frc::SmartDashboard::PutNumber("AprilTagID", bestTarget.GetFiducialId());
     } else {
       //frc2::PrintCommand("No Target Found.");
-      frc::SmartDashboard::PutNumber("AprilTag ID", 100);
+      frc::SmartDashboard::PutNumber("AprilTagID", 100);
     }
   });
   //return -1

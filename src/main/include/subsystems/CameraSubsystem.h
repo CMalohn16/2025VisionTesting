@@ -31,6 +31,6 @@ class CameraSubsystem : public frc2::SubsystemBase {
   // declared private and exposed only through public methods.
 
   frc::AprilTagFieldLayout aprilTagFieldLayout = frc::AprilTagFieldLayout::LoadField(frc::AprilTagField::k2024Crescendo);
-  photon::PhotonCamera limelightCamera{"limelight1"};
+  photon::PhotonCamera limelightCamera{"Limelight2"};
   
 };
