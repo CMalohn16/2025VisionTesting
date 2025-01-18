@@ -5,9 +5,9 @@
 #pragma once
 
 #include <frc2/command/CommandPtr.h>
-#include <frc2/command/button/CommandXboxController.h>
 
 #include "Constants.h"
+#include "subsystems/ControllerVibSubsystem.h"
 #include "subsystems/CameraSubsystem.h"
 
 /**
@@ -26,10 +26,11 @@ class RobotContainer {
  private:
   // Replace with CommandPS4Controller or CommandJoystick if needed
   frc2::CommandXboxController m_driverController{
-      OperatorConstants::kDriverControllerPort};
+    OperatorConstants::kDriverControllerPort};
 
   // The robot's subsystems are defined here...
-  CameraSubsystem m_subsystem;
+  ControllerVibSubsystem vibrationSubsystem;
+  CameraSubsystem cameraSubsystem;
 
   void ConfigureBindings();
 };

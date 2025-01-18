@@ -12,7 +12,7 @@ CameraSubsystem::CameraSubsystem() {
 
 //Puts the ID of the best visible target in smart dashboard
 frc2::CommandPtr CameraSubsystem::getBestID() {
-  return RunOnce([this] { 
+  return RunOnce([this] {
     photon::PhotonPipelineResult result = limelightCamera.GetLatestResult();
     if (result.HasTargets()) {
       photon::PhotonTrackedTarget bestTarget = result.GetBestTarget();
@@ -41,6 +41,6 @@ frc2::CommandPtr CameraSubsystem::getBestID() {
 // }
 
 //updates the result from photonvision limelight
-void CameraSubsystem::updateResult() {
-  result = limelightCamera.GetLatestResult();
-}
+// void CameraSubsystem::updateResult() {
+//   CameraSubsystem::result = limelightCamera.GetLatestResult();
+// }

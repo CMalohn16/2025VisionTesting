@@ -6,10 +6,8 @@
 
 #include <frc2/command/Commands.h>
 
-#include "commands/GetBestID.h"
-
 frc2::CommandPtr autos::ExampleAuto(CameraSubsystem* subsystem) {
-  return frc2::cmd::Sequence(subsystem->GetBestID()//,
+  return frc2::cmd::Sequence(subsystem->getBestID()//,
                              //ExampleCommand(subsystem).ToPtr()
                              );
 }

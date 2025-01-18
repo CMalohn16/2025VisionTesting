@@ -7,7 +7,6 @@
 #include <frc2/command/button/Trigger.h>
 
 #include "commands/Autos.h"
-#include "commands/GetBestID.h"
 
 RobotContainer::RobotContainer() {
   // Initialize all of your commands and subsystems here
@@ -27,10 +26,12 @@ void RobotContainer::ConfigureBindings() {
 
   // Schedule `ExampleMethodCommand` when the Xbox controller's B button is
   // pressed, cancelling on release.
-  m_driverController.B().WhileTrue(m_subsystem.getBestID());
+  m_driverController.B().WhileTrue(cameraSubsystem.getBestID());
+  m_driverController.X().WhileTrue(vibrationSubsystem.vibrate());
+  m_driverController.Y().WhileTrue(vibrationSubsystem.endVibrate());
 }
 
 frc2::CommandPtr RobotContainer::GetAutonomousCommand() {
   // An example command will be run in autonomous
-  return autos::ExampleAuto(&m_subsystem);
+  return autos::ExampleAuto(&cameraSubsystem);
 }

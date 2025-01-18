@@ -9,7 +9,6 @@
 
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <frc/apriltag/AprilTagFieldLayout.h>
-#include <string_view>
 
 #include "photon/PhotonCamera.h"
 #include "photon/PhotonUtils.h"
@@ -23,16 +22,15 @@ class CameraSubsystem : public frc2::SubsystemBase {
    */
   frc2::CommandPtr getBestID();
 
-  void getPose();
+  //void getPose();
   //frc2::CommandPtr alignWithCoralTag();
-  void updateResult();
+  //void updateResult();
   
  private:
   // Components (e.g. motor controllers and sensors) should generally be
   // declared private and exposed only through public methods.
 
-  frc::AprilTagFieldLayout aprilTagFieldLayout = frc::LoadAprilTagLayoutField(frc::AprilTagField::k2024Crescendo);
+  frc::AprilTagFieldLayout aprilTagFieldLayout = frc::AprilTagFieldLayout::LoadField(frc::AprilTagField::k2024Crescendo);
   photon::PhotonCamera limelightCamera{"limelight1"};
   
-  photon::PhotonPipelineResult result = limelightCamera.GetLatestResult();
 };
