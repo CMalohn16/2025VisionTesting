@@ -24,6 +24,8 @@ class RobotContainer {
   frc2::CommandPtr GetAutonomousCommand();
   void getBestIDFunction();
 
+  frc2::CommandPtr SetVibrate(double strength);
+
  private:
   // Replace with CommandPS4Controller or CommandJoystick if needed
   frc2::CommandXboxController m_driverController{
