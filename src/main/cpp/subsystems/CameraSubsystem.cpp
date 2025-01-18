@@ -21,24 +21,10 @@ frc2::CommandPtr CameraSubsystem::getBestID() {
       frc::SmartDashboard::PutNumber("AprilTagID", 100);
     }
   });
-  //return -1
 }
 
-//finds the robot's position on the field using apriltags
-// void CameraSubsystem::getPose() {
-//     photon::
-// }
-
-// frc2::CommandPtr CameraSubsystem::alignWithCoralTag() {
-//   return RunOnce([this] {
-//     photon::PhotonPipelineResult result = limelightCamera.GetLatestResult();
-//     if (result.HasTargets()) {
-//       photon::PhotonTrackedTarget bestTarget = result.GetBestTarget();
-//     }
-//   });
-// }
-
-//updates the result from photonvision limelight
-// void CameraSubsystem::updateResult() {
-//   CameraSubsystem::result = limelightCamera.GetLatestResult();
-// }
+frc2::CommandPtr CameraSubsystem::SetVibrate(frc2::CommandXboxController &controller, double strength) {
+  return RunOnce([this, &controller, strength] {
+    controller.SetRumble(frc::GenericHID::RumbleType::kBothRumble, strength);
+  });
+}

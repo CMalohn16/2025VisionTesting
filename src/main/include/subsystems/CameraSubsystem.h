@@ -13,6 +13,8 @@
 #include "photon/PhotonCamera.h"
 #include "photon/PhotonUtils.h"
 
+#include <frc2/command/button/CommandXboxController.h>
+
 class CameraSubsystem : public frc2::SubsystemBase {
  public:
   CameraSubsystem();
@@ -22,6 +24,8 @@ class CameraSubsystem : public frc2::SubsystemBase {
    */
   frc2::CommandPtr getBestID();
   void Periodic() override;
+
+  frc2::CommandPtr SetVibrate(frc2::CommandXboxController &controller, double strength);
 
   //void getPose();
   //frc2::CommandPtr alignWithCoralTag();
