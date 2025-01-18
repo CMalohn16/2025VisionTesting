@@ -21,6 +21,7 @@ class CameraSubsystem : public frc2::SubsystemBase {
    * Example command factory method.
    */
   frc2::CommandPtr getBestID();
+  void Periodic() override;
 
   //void getPose();
   //frc2::CommandPtr alignWithCoralTag();

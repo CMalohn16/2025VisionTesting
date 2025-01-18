@@ -25,7 +25,9 @@ void Robot::RobotPeriodic() {
  * can use it to reset any subsystem information you want to clear when the
  * robot is disabled.
  */
-void Robot::DisabledInit() {}
+void Robot::DisabledInit() {
+    frc::SmartDashboard::PutBoolean("Test Periodic", false);
+}
 
 void Robot::DisabledPeriodic() {}
 
@@ -61,7 +63,9 @@ void Robot::TeleopPeriodic() {}
 /**
  * This function is called periodically during test mode.
  */
-void Robot::TestPeriodic() {}
+void Robot::TestPeriodic() {
+  frc::SmartDashboard::PutBoolean("Test Periodic", true);
+}
 
 /**
  * This function is called once when the robot is first started up.

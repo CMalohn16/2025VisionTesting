@@ -29,7 +29,6 @@ void RobotContainer::ConfigureBindings() {
   m_driverController.B().WhileTrue(cameraSubsystem.getBestID());
   m_driverController.X().WhileTrue(vibrationSubsystem.vibrate());
   m_driverController.Y().WhileTrue(vibrationSubsystem.endVibrate());
-  m_driverController.A().WhileTrue(cameraSubsystem.printSomething());
 }
 
 frc2::CommandPtr RobotContainer::GetAutonomousCommand() {
